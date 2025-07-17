@@ -21,7 +21,7 @@ let primitiveAnimStart = false;
 let primitiveAnimFinished = false;
 
 const { onBeforeRender } = useLoop();
-const { scene: model, animations } = await useGLTF('/src/models/door.glb');
+const { scene: model, animations } = await useGLTF('/models/door.glb');
 const { actions } = useAnimations(animations, model);
 
 const MAX_SCALING = new Vector3(1.1, 1.1, 1.1);

@@ -7,7 +7,7 @@ import { ref } from 'vue';
 const emit = defineEmits<{
 	(e: 'anim-finished'): void
 }>();
-const { animations } = await useGLTF('/src/models/camera.glb');
+const { animations } = await useGLTF('/models/camera.glb');
 const { camera } = useTresContext();
 camera.value!.position.set(...[0, 0.75, 2]);
 camera.value!.rotation.set(0, 0, 0);

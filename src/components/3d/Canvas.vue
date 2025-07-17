@@ -39,7 +39,7 @@ function startCameraAnimation(): void {
     />
     <SoftShadows :size="32" :samples="32" :focus=".25" />
     <Suspense>
-      <Environment background :backgroundIntensity="20" files="/src/assets/cubemap.hdr" />
+      <Environment background :backgroundIntensity="20" files="/cubemap.hdr" />
     </Suspense>
   </TresCanvas>
 </template>
