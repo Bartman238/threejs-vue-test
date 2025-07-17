@@ -7,7 +7,6 @@ import { templateCompilerOptions } from '@tresjs/core'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '',
   plugins: [
     vue({
       ...templateCompilerOptions
