@@ -26,11 +26,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: build app
-        working-directory: ./
-        run: |
-          yarn
-          yarn build
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
@@ -42,6 +37,11 @@ jobs:
           destination: ./dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+      - name: build app
+        working-directory: ./
+        run: |
+          yarn
+          yarn build
         
 
   # Deployment job
