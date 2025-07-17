@@ -5,6 +5,8 @@ import { useAnimations, useGLTF } from '@tresjs/cientos'
 import { ref, shallowRef, watch, type ShallowRef } from 'vue';
 import { useDataStore } from '@/stores/data';
 
+const BASE = import.meta.env.BASE_URL;
+
 const emit = defineEmits<{
 	(e: 'open'): void
 }>();
@@ -21,7 +23,7 @@ let primitiveAnimStart = false;
 let primitiveAnimFinished = false;
 
 const { onBeforeRender } = useLoop();
-const { scene: model, animations } = await useGLTF('/models/door.glb');
+const { scene: model, animations } = await useGLTF(`${BASE}/models/door.glb`);
 const { actions } = useAnimations(animations, model);
 
 const MAX_SCALING = new Vector3(1.1, 1.1, 1.1);

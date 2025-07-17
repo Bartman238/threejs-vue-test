@@ -4,10 +4,12 @@ import { useAnimations, useGLTF, PointerLockControls } from '@tresjs/cientos'
 import { useTresContext } from '@tresjs/core';
 import { ref } from 'vue';
 
+const BASE = import.meta.env.BASE_URL;
+
 const emit = defineEmits<{
 	(e: 'anim-finished'): void
 }>();
-const { animations } = await useGLTF('/models/camera.glb');
+const { animations } = await useGLTF(`${BASE}/models/camera.glb`);
 const { camera } = useTresContext();
 camera.value!.position.set(...[0, 0.75, 2]);
 camera.value!.rotation.set(0, 0, 0);

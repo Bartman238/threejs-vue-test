@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { useGLTF } from '@tresjs/cientos'
+import { useGLTF } from '@tresjs/cientos';
 
-const { scene: model } = await useGLTF('/models/room.glb');
+const BASE = import.meta.env.BASE_URL;
+
+const { scene: model } = await useGLTF(`${BASE}/models/room.glb`);
 model.children.forEach(child => {
 	child.castShadow = true;
 	child.receiveShadow = true;

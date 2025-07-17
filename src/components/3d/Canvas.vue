@@ -9,6 +9,7 @@ import { ref, useTemplateRef } from 'vue';
 
 const camRef = useTemplateRef<typeof Camera>('camRef');
 const isControlEnabled = ref<boolean>(false);
+const BASE = import.meta.env.BASE_URL;
 
 function startCameraAnimation(): void {
   camRef.value!.$.exposed!.startAnim();
@@ -39,7 +40,7 @@ function startCameraAnimation(): void {
     />
     <SoftShadows :size="32" :samples="32" :focus=".25" />
     <Suspense>
-      <Environment background :backgroundIntensity="20" files="/cubemap.hdr" />
+      <Environment background :backgroundIntensity="20" :files="`${BASE}/cubemap.hdr`" />
     </Suspense>
   </TresCanvas>
 </template>
