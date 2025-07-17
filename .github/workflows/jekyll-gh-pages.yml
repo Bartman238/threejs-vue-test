@@ -38,6 +38,7 @@ jobs:
           VITE_BASE_URL: /threejs-vue-test
         working-directory: ./
         run: |
+          echo $VITE_BASE_URL
           yarn
           yarn build
       - name: Upload artifact
