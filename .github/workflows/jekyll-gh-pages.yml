@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build app
+        working-directory: ./
         run: |
           yarn
           yarn build
